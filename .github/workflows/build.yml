@@ -1,0 +1,24 @@
+---
+name: build
+
+on:
+   workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Run Open Orbis Toolchain
+        uses: OpenOrbis/toolchain-action@main
+        with:
+          version: latest
+          command: cd hello_world; make; PkgTool.Core pkg_build pkg/pkg.gp4 .
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: IV0000-BREW00083_00-HELLOWORLD000000.pkg
+          path: hello_world/IV0000-BREW00083_00-HELLOWORLD000000.pkg
