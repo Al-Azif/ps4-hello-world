@@ -1,6 +1,6 @@
 {
 	"name": "Open Orbis Toolchain",
-	"image": "openorbis/toolchain:v0.5",
+	"image": "openorbisofficial/toolchain:v0.5.1",
 	"settings": {
 		"editor.formatOnSave": true,
 		"files.insertFinalNewline": true,
